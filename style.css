@@ -1,0 +1,58 @@
+@import url("https://fonts.xz.style/serve/inter.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+html {
+  font: clamp(100%, 6vmin, 150%) / 1.4 "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  color: #111;
+  background-color: #fefefe;
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color: #fefefe;
+    background-color: #111;
+  }
+}
+
+h1 {
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+h1,
+p {
+  margin-bottom: 1.4em;
+}
+
+main {
+  max-width: 35rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.bookmarklet {
+  background-color: #ddd;
+  color: #333;
+  padding: 0.25em 0.75em;
+  border-radius: 1em;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.center {
+  text-align: center;
+}
+
+.support {
+  color: tomato;
+}

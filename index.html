@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PIPify: Picture-in-picture Bookmarklet</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>PIPify: One-Click Picture-In-Picture</h1>
+      <p>Just drag the “PIPify” link below into your bookmarks bar:</p>
+      <p class="center">
+        <a
+          class="bookmarklet"
+          href="javascript:(function()%7Bif(!('pictureInPictureEnabled'%20in%20document))%20%7Balert(%22Browser%20does%20not%20support%20picture-in-picture%22)%3Breturn%7Dconst%20firstVideo%20%3D%20document.querySelector('video')%3Bif(firstVideo%20%3D%3D%20null)%20%7Balert(%22No%20video%20element%20found%22)%3Breturn%7DfirstVideo.requestPictureInPicture()%7D)()"
+          >PIPify</a
+        >
+      </p>
+      <p>
+        Then, on any page with a <code>&lt;video&gt;</code> element, click it to
+        have the video appear on top of any windows; perfect for seeing video
+        call participants while you're taking notes in a different application.
+      </p>
+
+      <p class="support"></p>
+    </main>
+    <script type="text/javascript">
+      const supportP = document.querySelector(".support")
+      if (!("pictureInPictureEnabled" in document)) {
+        supportP.innerHTML =
+          "This browser does not support native picture-in-picture; the bookmarklet won't have any effect!"
+      }
+    </script>
+  </body>
+</html>
