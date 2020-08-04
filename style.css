@@ -9,7 +9,7 @@
 }
 
 html {
-  font: clamp(100%, 5vmin, 120%) / 1.4 "Inter", system-ui, -apple-system,
+  font: clamp(100%, 3vmin, 150%) / 1.4 "Inter", system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
   color: #111;
   background-color: #fefefe;
