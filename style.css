@@ -1,4 +1,5 @@
 @import url("https://fonts.xz.style/serve/inter.css");
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/jetbrains-mono.min.css");
 
 * {
   box-sizing: border-box;
@@ -8,7 +9,7 @@
 }
 
 html {
-  font: clamp(100%, 6vmin, 150%) / 1.4 "Inter", system-ui, -apple-system,
+  font: clamp(100%, 5vmin, 120%) / 1.4 "Inter", system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
   color: #111;
   background-color: #fefefe;
@@ -25,19 +26,22 @@ html {
 }
 
 h1 {
+  font-size: 2.5rem;
   line-height: 1;
   letter-spacing: -0.025em;
 }
 
 h1,
-p {
-  margin-bottom: 1.4em;
+p,
+section,
+pre {
+  margin-bottom: 1.5em;
 }
 
 main {
-  max-width: 35rem;
+  max-width: 36rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.75rem;
 }
 
 .bookmarklet {
@@ -55,4 +59,33 @@ main {
 
 .support {
   color: tomato;
+}
+
+video {
+  max-width: 100%;
+  display: block;
+  border-radius: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+small {
+  opacity: 0.75;
+}
+
+code,
+pre {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.875rem;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  background-color: rgba(128, 128, 128, 0.15);
+}
+
+pre {
+  box-sizing: content-box;
+  padding: 0.5em 0.75em;
+  margin-left: -0.75em;
+  margin-right: -0.75em;
+  max-width: 100%;
+  overflow: scroll;
 }
