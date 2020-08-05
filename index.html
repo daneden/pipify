@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>PIPify: Picture-in-picture Bookmarklet</title>
+    <title>PiPify: Picture-in-picture Bookmarklet</title>
     <link rel="stylesheet" href="./style.css" />
     <meta name="viewport" content="width=device-width" />
   </head>
   <body>
     <main>
       <section>
-        <h1 class="center">PIPify: One-Click Picture-In-Picture</h1>
+        <h1 class="center">PiPify: One-Click Picture-In-Picture</h1>
         <p class="center">
-          Drag the “PIPify” link below into your bookmarks bar:
+          Drag the “PiPify” link below into your bookmarks bar:
         </p>
         <p class="center">
           <a
             class="bookmarklet"
             href="javascript:(function()%7Bif(!('pictureInPictureEnabled'%20in%20document))%20%7Balert(%22Browser%20does%20not%20support%20picture-in-picture%22)%3Breturn%7Dconst%20firstVideo%20%3D%20document.querySelector('video')%3Bif(firstVideo%20%3D%3D%20null)%20%7Balert(%22No%20video%20element%20found%22)%3Breturn%7DfirstVideo.requestPictureInPicture()%7D)()"
-            >PIPify</a
+            >PiPify</a
           >
         </p>
         <p>
@@ -30,14 +30,14 @@
       </section>
       <section>
         <h2>Try it out</h2>
-        <p>Try clicking “PIPify” above to see it in action.</p>
+        <p>Try clicking “PiPify” above to see it in action.</p>
         <video controls preload="metadata" loop>
           <source type="video/mp4" src="./sample.mp4" />
           <p class="support">HTML video is not supported in this browser</p>
         </video>
 
         <small
-          >Courtesy notice: the video above is 3.2mb in size. Clicking “PIPify”
+          >Courtesy notice: the video above is 3.2mb in size. Clicking “PiPify”
           will download and play it.</small
         >
       </section>
@@ -60,9 +60,9 @@
       </section>
     </main>
     <script type="text/javascript">
-      const pipifyLink = document.querySelector(".bookmarklet")
+      const PiPifyLink = document.querySelector(".bookmarklet")
       const demoVideo = document.querySelector("video")
-      pipifyLink.addEventListener("click", () => {
+      PiPifyLink.addEventListener("click", () => {
         demoVideo.play()
       })
       const supportP = document.querySelector(".support")
