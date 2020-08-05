@@ -44,10 +44,30 @@
       <section>
         <h2>How does it work?</h2>
         <p>
-          This bookmarklet runs a simple JavaScript function that is essentially
-          the following:
+          This bookmarklet runs a simple JavaScript function:
         </p>
-        <pre>document.querySelector('video').requestPictureInPicture()</pre>
+        <pre class="pre-demo">
+function pipify() {
+  // Checks for native support
+  if (!("pictureInPictureEnabled" in document)) {
+    alert("Browser does not support picture-in-picture");
+    return;
+  }
+
+  // Select the first video element on the page
+  const firstVideo = document.querySelector("video");
+
+  // Return if there's no element
+  if (firstVideo === null) {
+    alert("No video element found");
+    return;
+  }
+
+  // Request PiP for the video
+  firstVideo.requestPictureInPicture();
+}</pre
+        >
+
         <p>
           It leverages the browser's native “picture-in-picture” functionality
           to display playing video on top of other windows. You can read more
@@ -60,11 +80,22 @@
       </section>
     </main>
     <script type="text/javascript">
-      const PiPifyLink = document.querySelector(".bookmarklet")
+      const pipifyLink = document.querySelector(".bookmarklet")
+      const source = document.querySelector(".pre-demo").textContent
+      const transformedSource = encodeURIComponent(
+        source
+          .replace(" pipify", "")
+          .replace(/\/\/.*\n/g, "")
+          .trim()
+      )
+      pipifyLink.setAttribute("href", `javascript:(${transformedSource})()`)
+
+      // Set up live demo
+
       const demoVideo = document.querySelector("video")
       const supportP = document.querySelector(".support")
 
-      PiPifyLink.addEventListener("click", () => {
+      pipifyLink.addEventListener("click", () => {
         demoVideo.play()
       })
 
