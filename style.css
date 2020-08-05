@@ -1,6 +1,10 @@
 @import url("https://fonts.xz.style/serve/inter.css");
 @import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/jetbrains-mono.min.css");
 
+:root {
+  --link-color: rgb(0, 150, 255);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -41,21 +45,12 @@ main {
   padding: 1.75rem;
 }
 
-.bookmarklet {
-  background-color: #ddd;
-  color: #333;
-  padding: 0.25em 0.75em;
-  border-radius: 1em;
-  text-decoration: none;
-  font-weight: 700;
+a {
+  color: inherit;
 }
 
-.center {
-  text-align: center;
-}
-
-.support {
-  color: tomato;
+a:hover {
+  color: var(--link-color);
 }
 
 video {
@@ -85,4 +80,21 @@ pre {
   margin-right: -0.75em;
   max-width: 100%;
   overflow: scroll;
+}
+
+.bookmarklet {
+  background-color: #ddd;
+  color: #333;
+  padding: 0.25em 0.75em;
+  border-radius: 1em;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.support {
+  color: tomato;
+}
+
+.center {
+  text-align: center;
 }
