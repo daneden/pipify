@@ -3,6 +3,15 @@
 
 :root {
   --link-color: rgb(0, 150, 255);
+  --wash-color: #fefefe;
+  --text-color: #111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --wash-color: #111;
+    --text-color: #fefefe;
+  }
 }
 
 * {
@@ -15,15 +24,8 @@
 html {
   font: clamp(100%, 3vmin, 150%) / 1.4 "Inter", system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
-  color: #111;
-  background-color: #fefefe;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color: #fefefe;
-    background-color: #111;
-  }
+  color: var(--text-color);
+  background-color: var(--wash-color);
 }
 
 h1 {
@@ -97,4 +99,44 @@ pre {
 
 .center {
   text-align: center;
+}
+
+.pip:after {
+  content: "Picture";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  padding: 0.1em 0.25em;
+  margin: -0.1em -0.25em;
+  border-radius: 0.25em;
+  animation: 3s pipify cubic-bezier(0.76, 0, 0.24, 1);
+  animation-delay: 1s;
+  z-index: 1;
+  line-height: 1.2;
+}
+
+.pip {
+  animation: 3s pipify-stage cubic-bezier(0.76, 0, 0.24, 1);
+  animation-delay: 1s;
+}
+
+@keyframes pipify-stage {
+  25%,
+  75% {
+    color: rgba(128, 128, 128, 0.5);
+  }
+}
+
+@keyframes pipify {
+  25%,
+  75% {
+    opacity: 1;
+    transform: scale(0.5) translateX(100%) translateY(100%);
+    box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.1);
+    background-color: var(--text-color);
+    color: var(--wash-color);
+  }
 }

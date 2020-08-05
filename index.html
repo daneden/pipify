@@ -8,7 +8,9 @@
   <body>
     <main>
       <section>
-        <h1 class="center">PiPify: One-Click Picture-In-Picture</h1>
+        <h1 class="center">
+          PiPify: One-Click Picture-In-<span class="pip">Picture</span>
+        </h1>
         <p class="center">
           Drag the “PiPify” link below into your bookmarks bar:
         </p>
@@ -91,7 +93,6 @@ function pipify() {
       pipifyLink.setAttribute("href", `javascript:(${transformedSource})()`)
 
       // Set up live demo
-
       const demoVideo = document.querySelector("video")
       const supportP = document.querySelector(".support")
 
