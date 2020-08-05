@@ -3,14 +3,17 @@
 
 :root {
   --link-color: rgb(0, 150, 255);
+  --link-alpha: rgb(0, 150, 255, 0.25);
   --wash-color: #fefefe;
   --text-color: #111;
+  --highlight-color: rgba(0, 0, 0, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --wash-color: #111;
     --text-color: #fefefe;
+    --highlight-color: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -29,7 +32,7 @@ html {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 10vmin, 3rem);
   line-height: 1;
   letter-spacing: -0.025em;
 }
@@ -37,7 +40,9 @@ h1 {
 h1,
 p,
 section,
-pre {
+pre,
+.note {
+  display: block;
   margin-bottom: 1.5em;
 }
 
@@ -91,6 +96,12 @@ pre {
   border-radius: 1em;
   text-decoration: none;
   font-weight: 700;
+  margin-bottom: 3rem;
+  display: inline-block;
+}
+
+.bookmarklet:hover {
+  background-color: var(--link-alpha);
 }
 
 .support {
@@ -102,24 +113,29 @@ pre {
 }
 
 .pip:after {
-  content: "Picture";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  background-clip: border-box;
+  animation: 5s pipify cubic-bezier(0.76, 0, 0.24, 1);
+  animation-delay: 1s;
+  background-color: var(--link-color);
+  border-radius: 0.25em;
+  border: 1px solid var(--highlight-color);
   bottom: 0;
+  box-shadow: 0 0.35em 0.5em rgba(0, 0, 0, 0.15);
+  color: white;
+  content: "Picture";
+  left: 0;
+  line-height: 1.2;
+  margin: -0.1em -0.25em;
   opacity: 0;
   padding: 0.1em 0.25em;
-  margin: -0.1em -0.25em;
-  border-radius: 0.25em;
-  animation: 3s pipify cubic-bezier(0.76, 0, 0.24, 1);
-  animation-delay: 1s;
+  position: absolute;
+  right: 0;
+  top: 0;
   z-index: 1;
-  line-height: 1.2;
 }
 
 .pip {
-  animation: 3s pipify-stage cubic-bezier(0.76, 0, 0.24, 1);
+  animation: 5s pipify-stage cubic-bezier(0.8, 0, 0.2, 1);
   animation-delay: 1s;
 }
 
@@ -131,12 +147,23 @@ pre {
 }
 
 @keyframes pipify {
+  0%,
+  100% {
+    transform: scale(0) rotateX(90deg);
+    transform-origin: bottom center;
+  }
+
+  10%,
+  90% {
+    opacity: 1;
+    transform: none;
+  }
+
   25%,
   75% {
     opacity: 1;
-    transform: scale(0.5) translateX(100%) translateY(100%);
-    box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.1);
-    background-color: var(--text-color);
-    color: var(--wash-color);
+    transform: scale(0.5) translateX(25%) translateY(25%);
+    box-shadow: 0 0.15em 0.25em rgba(0, 0, 0, 0.1);
+    transform-origin: bottom right;
   }
 }

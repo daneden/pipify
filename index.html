@@ -32,13 +32,20 @@
       </section>
       <section>
         <h2>Try it out</h2>
-        <p>Try clicking “PiPify” above to see it in action.</p>
+        <p>
+          Try clicking “PiPify” above to see it in action.
+          <small class="note"
+            >Note that on iOS, JavaScript cannot invoke
+            picture-in-picture.</small
+          >
+        </p>
+
         <video controls preload="metadata" loop>
           <source type="video/mp4" src="./sample.mp4" />
           <p class="support">HTML video is not supported in this browser</p>
         </video>
 
-        <small
+        <small class="note"
           >Courtesy notice: the video above is 3.2mb in size. Clicking “PiPify”
           will download and play it.</small
         >
@@ -80,6 +87,14 @@ function pipify() {
           for it.
         </p>
       </section>
+      <footer>
+        <small class="note"
+          >A teeny tiny tool made by
+          <a href="https://daneden.me">Daniel Eden</a>. Open source and
+          <a href="https://github.com/daneden/pipify">available on GitHub</a
+          >.</small
+        >
+      </footer>
     </main>
     <script type="text/javascript">
       const pipifyLink = document.querySelector(".bookmarklet")
