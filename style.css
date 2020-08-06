@@ -159,7 +159,7 @@ pre {
   25%,
   75% {
     opacity: 1;
-    transform: scale(0.5) translateX(25%) translateY(25%);
+    transform: scale(0.5) translateX(10%) translateY(25%);
     box-shadow: 0 0.15em 0.25em rgba(0, 0, 0, 0.1);
     transform-origin: bottom right;
   }
