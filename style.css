@@ -146,7 +146,7 @@ pre {
 @keyframes pipify {
   0%,
   100% {
-    transform: scale(0) rotateX(90deg);
+    transform: scale(0);
     transform-origin: bottom center;
   }
 
